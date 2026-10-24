@@ -1,0 +1,16 @@
+router: 10.0.29.101
+interface_name: Loopback67070145
+netmiko:
+  ip_info:
+    - interface: Loopback67070145
+      link_status: administratively down
+      protocol_status: down
+      ip_address:
+        - 172.30.145.1
+      prefix_length:
+        - "32"
+  descriptions:
+    - port: Loopback67070145
+      status: admin down
+      protocol: down
+      description: IPA2026-67070145

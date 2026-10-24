@@ -1,0 +1,6 @@
+target: delete
+fixture: 17-delete-backend-failed.yaml
+
+expected:
+  status: error
+  result: backend_failed

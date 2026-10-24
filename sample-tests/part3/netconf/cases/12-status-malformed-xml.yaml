@@ -1,0 +1,6 @@
+target: status
+fixture: 12-status-malformed-xml.yaml
+
+expected:
+  status: error
+  result: backend_failed

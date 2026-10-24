@@ -1,0 +1,10 @@
+router: 10.0.29.102
+
+desired:
+  name: Loopback67070145
+  ipv4: 172.30.145.9/32
+  description: IPA2026-67070145-DOWN
+  admin_state: down
+
+http:
+  status_code: 204

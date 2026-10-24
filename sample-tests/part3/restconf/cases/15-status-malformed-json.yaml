@@ -1,0 +1,6 @@
+target: status
+fixture: 15-status-malformed-json.yaml
+
+expected:
+  status: error
+  result: backend_failed

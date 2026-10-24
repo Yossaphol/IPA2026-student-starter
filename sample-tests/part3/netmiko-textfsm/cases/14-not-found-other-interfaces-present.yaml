@@ -1,0 +1,5 @@
+fixture: 14-not-found-other-interfaces-present.yaml
+expected:
+  status: ok
+  result: not_found
+  interface: null

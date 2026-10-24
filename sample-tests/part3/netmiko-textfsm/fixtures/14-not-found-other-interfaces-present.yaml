@@ -1,0 +1,13 @@
+router: 10.0.29.101
+interface_name: Loopback67070145
+netmiko:
+  ip_info: []
+  descriptions:
+    - port: Gi1
+      status: up
+      protocol: up
+      description: ""
+    - port: Lo67070183
+      status: up
+      protocol: up
+      description: IPA2026-67070183

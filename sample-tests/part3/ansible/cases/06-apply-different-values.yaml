@@ -1,0 +1,6 @@
+target: apply
+fixture: 06-apply-different-values.yaml
+
+expected:
+  status: ok
+  result: applied

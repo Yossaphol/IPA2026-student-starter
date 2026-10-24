@@ -1,0 +1,6 @@
+target: apply
+fixture: 16-apply-ok-200.yaml
+
+expected:
+  status: ok
+  result: applied

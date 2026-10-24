@@ -1,0 +1,11 @@
+target: status
+fixture: 11-status-netmask-24.yaml
+
+expected:
+  status: ok
+  result: found
+  interface:
+    name: Loopback67070145
+    ipv4: 10.45.1.1/24
+    description: IPA2026-67070145
+    admin_state: down

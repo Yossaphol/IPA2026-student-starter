@@ -1,0 +1,6 @@
+target: apply
+fixture: 17-apply-authentication-failed-403.yaml
+
+expected:
+  status: error
+  result: authentication_failed

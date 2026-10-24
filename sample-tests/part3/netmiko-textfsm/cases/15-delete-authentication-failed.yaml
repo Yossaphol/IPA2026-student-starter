@@ -1,0 +1,6 @@
+target: delete
+fixture: 15-delete-authentication-failed.yaml
+
+expected:
+  status: error
+  result: authentication_failed

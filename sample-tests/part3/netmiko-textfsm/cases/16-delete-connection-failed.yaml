@@ -1,0 +1,6 @@
+target: delete
+fixture: 16-delete-connection-failed.yaml
+
+expected:
+  status: error
+  result: connection_failed

@@ -1,0 +1,6 @@
+target: status
+fixture: 12-status-backend-failed-500.yaml
+
+expected:
+  status: error
+  result: backend_failed

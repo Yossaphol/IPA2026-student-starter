@@ -1,0 +1,20 @@
+router: 10.0.29.101
+interface_name: Loopback67070145
+netmiko:
+  ip_info:
+    - interface: Loopback67070145
+      link_status: up
+      protocol_status: up
+      ip_address:
+        - 172.30.145.1
+      prefix_length:
+        - "32"
+  descriptions:
+    - port: Gi1
+      status: up
+      protocol: up
+      description: ""
+    - port: Lo67070145
+      status: up
+      protocol: up
+      description: ""

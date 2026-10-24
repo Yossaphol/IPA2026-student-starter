@@ -1,0 +1,6 @@
+target: status
+fixture: 11-status-authentication-failed-403.yaml
+
+expected:
+  status: error
+  result: authentication_failed
