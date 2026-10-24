@@ -1,0 +1,6 @@
+target: core
+request: 29-valid-netconf-plan.yaml
+
+expected:
+  status: ok
+  result: accepted

@@ -1,0 +1,6 @@
+target: core
+request: 35-delete-ignores-extra-fields.yaml
+
+expected:
+  status: ok
+  result: accepted

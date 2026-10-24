@@ -1,0 +1,10 @@
+version: 1
+router: 10.0.29.103
+method: netconf
+action: plan
+desired:
+  interface:
+    name: Loopback456
+    ipv4: 172.23.45.6/32
+    description: IPA2026-PLAN
+    admin_state: down

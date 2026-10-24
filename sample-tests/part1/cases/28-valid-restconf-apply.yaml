@@ -1,0 +1,6 @@
+target: core
+request: 28-valid-restconf-apply.yaml
+
+expected:
+  status: ok
+  result: accepted

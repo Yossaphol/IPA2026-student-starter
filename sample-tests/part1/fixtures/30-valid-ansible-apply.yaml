@@ -1,0 +1,10 @@
+version: 1
+router: 10.0.29.104
+method: ansible
+action: apply
+desired:
+  interface:
+    name: Loopback789
+    ipv4: 172.23.78.9/32
+    description: IPA2026-ANSIBLE
+    admin_state: up

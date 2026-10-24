@@ -1,0 +1,6 @@
+target: core
+request: 36-yaml-list-root.yaml
+
+expected:
+  status: error
+  result: invalid_yaml

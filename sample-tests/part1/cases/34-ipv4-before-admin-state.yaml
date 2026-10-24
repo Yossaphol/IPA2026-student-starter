@@ -1,0 +1,6 @@
+target: core
+request: 34-ipv4-before-admin-state.yaml
+
+expected:
+  status: error
+  result: missing_ipv4

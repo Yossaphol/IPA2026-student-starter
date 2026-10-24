@@ -1,0 +1,6 @@
+target: core
+request: 33-action-before-desired.yaml
+
+expected:
+  status: error
+  result: invalid_action

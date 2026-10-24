@@ -1,0 +1,6 @@
+target: core
+request: 37-yaml-empty-file.yaml
+
+expected:
+  status: error
+  result: invalid_yaml

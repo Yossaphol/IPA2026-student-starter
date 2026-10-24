@@ -1,0 +1,6 @@
+target: core
+request: 31-valid-netmiko-status.yaml
+
+expected:
+  status: ok
+  result: accepted

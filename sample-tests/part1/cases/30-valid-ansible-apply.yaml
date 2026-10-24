@@ -1,0 +1,6 @@
+target: core
+request: 30-valid-ansible-apply.yaml
+
+expected:
+  status: ok
+  result: accepted

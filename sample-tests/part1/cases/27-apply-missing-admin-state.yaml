@@ -1,0 +1,6 @@
+target: core
+request: 27-apply-missing-admin-state.yaml
+
+expected:
+  status: error
+  result: missing_admin_state

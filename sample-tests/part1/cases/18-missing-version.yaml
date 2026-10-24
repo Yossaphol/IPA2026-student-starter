@@ -1,0 +1,6 @@
+target: core
+request: 18-missing-version.yaml
+
+expected:
+  status: error
+  result: invalid_version

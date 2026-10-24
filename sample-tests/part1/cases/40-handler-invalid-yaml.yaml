@@ -1,0 +1,8 @@
+target: handler
+attachment: 05-invalid-yaml.yaml
+expected:
+  status: error
+  result: invalid_yaml
+mentioned_people:
+- TEST-BOT
+bot_person_id: TEST-BOT

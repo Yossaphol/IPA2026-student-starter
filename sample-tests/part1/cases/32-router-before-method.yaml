@@ -1,0 +1,6 @@
+target: core
+request: 32-router-before-method.yaml
+
+expected:
+  status: error
+  result: missing_router

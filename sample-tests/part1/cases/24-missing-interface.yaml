@@ -1,0 +1,6 @@
+target: core
+request: 24-missing-interface.yaml
+
+expected:
+  status: error
+  result: missing_interface

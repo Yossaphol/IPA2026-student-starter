@@ -1,0 +1,6 @@
+target: core
+request: 39-router-empty-string.yaml
+
+expected:
+  status: error
+  result: missing_router

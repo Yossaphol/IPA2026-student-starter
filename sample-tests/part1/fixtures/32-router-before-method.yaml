@@ -1,0 +1,5 @@
+version: 1
+action: status
+desired:
+  interface:
+    name: Loopback123
