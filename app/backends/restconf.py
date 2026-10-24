@@ -1,8 +1,10 @@
 import os
+import ssl
 from ipaddress import IPv4Interface
 
 import requests
 import urllib3
+from requests.adapters import HTTPAdapter
 
 from app.backends import planning
 from app.core import error
@@ -24,17 +26,36 @@ def _auth():
         os.environ.get("ROUTER_PASS", ""),
     )
 
+class _LegacyTLSAdapter(HTTPAdapter):
+    """Allow the router's legacy TLS renegotiation, which OpenSSL 3 blocks."""
+
+    def init_poolmanager(self, *args, **kwargs):
+        context = ssl.create_default_context()
+        context.check_hostname = False
+        context.verify_mode = ssl.CERT_NONE
+        context.options |= ssl.OP_LEGACY_SERVER_CONNECT
+        kwargs["ssl_context"] = context
+        return super().init_poolmanager(*args, **kwargs)
+
+
+def _session():
+    session = requests.Session()
+    session.mount("https://", _LegacyTLSAdapter())
+    return session
+
 
 def _real_get(url):
-    return requests.get(
-        url, auth=_auth(), headers=HEADERS, verify=False, timeout=TIMEOUT
-    )
+    with _session() as session:
+        return session.get(
+            url, auth=_auth(), headers=HEADERS, verify=False, timeout=TIMEOUT
+        )
 
 
 def _real_put(url, json):
-    return requests.put(
-        url, json=json, auth=_auth(), headers=HEADERS, verify=False, timeout=TIMEOUT
-    )
+    with _session() as session:
+        return session.put(
+            url, json=json, auth=_auth(), headers=HEADERS, verify=False, timeout=TIMEOUT
+        )
 
 def _exception_to_error(exc):
     if isinstance(exc, PermissionError):

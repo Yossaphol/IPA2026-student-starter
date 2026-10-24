@@ -5,6 +5,7 @@ from netmiko.exceptions import (
     NetmikoAuthenticationException,
     NetmikoTimeoutException,
 )
+from netmiko.utilities import get_structured_data_textfsm
 
 from app.core import error
 
@@ -23,24 +24,22 @@ def _connect(router):
         conn_timeout=TIMEOUT,
     )
 
-
-def _as_records(output):
-    if isinstance(output, list):
-        return output
+def _parse(command, output):
     if not output.strip() or "% Invalid input" in output:
         return []
-    raise RuntimeError("TextFSM could not parse the command output")
-
+    records = get_structured_data_textfsm(
+        output, platform="cisco_ios", command=command
+    )
+    if not isinstance(records, list):
+        raise RuntimeError("TextFSM could not parse the command output")
+    return records
 
 def _read(conn, interface_name):
-    ip_info = conn.send_command(
-        f"show ip interface {interface_name}", use_textfsm=True
-    )
-    descriptions = conn.send_command(
-        "show interfaces description", use_textfsm=True
-    )
-    return _as_records(ip_info), _as_records(descriptions)
-
+    ip_command = f"show ip interface {interface_name}"
+    description_command = "show interfaces description"
+    ip_info = _parse(ip_command, conn.send_command(ip_command))
+    descriptions = _parse(description_command, conn.send_command(description_command))
+    return ip_info, descriptions
 
 def _full_name(name):
     if name.startswith("Lo") and not name.startswith("Loopback"):
